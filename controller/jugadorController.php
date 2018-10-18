@@ -6,6 +6,7 @@ require_once "securedController.php";
 class jugadorController
 {
   private $View;
+  PRIVATE $TITULO;
   private $titulo1;
   private $titulo2;
   private $Model;
@@ -17,7 +18,7 @@ class jugadorController
     $this->titulo1="Equipos de la Superliga  Argentina";
     $this->titulo2="Jugadores de la Superliga  Argentina";
     $this->tituloedit="editar jugador";
-
+    $this->Titulo="HOME";
     }
     function addjugador(){
         $equipos = $this->Model->getEquipos();
@@ -31,13 +32,13 @@ class jugadorController
   function homeAdmin(){
     $jugadores =$this->Model->GET_jugadores();
     $equipos = $this->Model->getEquipos();
-    $this->View->mostrarAdmin($this->titulo1,$this->titulo2,$jugadores,$equipos);
+    $this->View->mostrarAdmin($this->Titulo,$this->titulo1,$this->titulo2,$jugadores,$equipos);
 
   }
   function home(){
     $jugadores =$this->Model->GET_jugadores();
     $equipos = $this->Model->getEquipos();
-    $this->View->mostrarC($this->titulo1,$this->titulo2,$jugadores,$equipos);
+    $this->View->mostrarC($this->Titulo,$this->titulo1,$this->titulo2,$jugadores,$equipos);
 
   }
   function Agrega_jugador(){
@@ -54,25 +55,19 @@ class jugadorController
      header(HOMEADMIN);
  }
  function GuardarEditarJugador(){
-   $nombre_jugador = $_POST["nombrejugador"];
-   $fecha_nac = $_POST["fechanac"];
-   $dorsal=$_POST["dorsal"];
-   $id_jugador=$_POST["idjugador"];
-   echo "<h1>" . $id_jugador . "</h1>";
-     echo "<h1>" . $nombre_jugador . "</h1>";
-       echo "<h1>" . $dorsal . "</h1>";
-         echo "<h1>" . $fecha_nac . "</h1>";
-   $this->Model->GuardarEditarJugador($nombre_jugador,$fecha_nac,$dorsal,$id_jugador);
-   header(HOMEADMIN);
-
-
- }
+ $nombre_jugador = $_POST["nombrejugador"];
+ $fecha_nac = $_POST["fechanac"];
+ $dorsal=$_POST["dorsal"];
+ $altura=$_POST["altura"];
+ $id_jugador=$_POST["idjugador"];
+ $this->Model->GuardarEditarJugador($nombre_jugador,$fecha_nac,$dorsal,$altura,$id_jugador);
+ header(HOMEADMIN);
+}
  function EditarJugador($param){
-   echo "<h1>" .$param[0]. "</h1>";
-     $id_jugador = $param[0];
-     $jugador = $this->Model->getJugador($id_jugador);
-     $this->View->MuestraEditJugador($this->tituloedit,$jugador);
- }
+       $id_jugador = $param[0];
+       $jugador = $this->Model->getJugador($id_jugador);
+       $this->View->MuestraEditJugador($this->tituloedit,$jugador);
+   }
  function editEquipo($param){
      $id_equipo = $param[0];
      $equipo = $this->Model->getEquipo($id_equipo);

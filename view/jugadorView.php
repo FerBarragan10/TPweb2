@@ -7,7 +7,8 @@ class jugadorView
   function __construct(){
     $this->Smarty = new Smarty();
   }
-  function mostrarAdmin($titulo1,$titulo2,$jugadores,$equipos){
+  function mostrarAdmin($TITULO,$titulo1,$titulo2,$jugadores,$equipos){
+$this->Smarty->assign('Titulo',$TITULO);
   $this->Smarty->assign('Titulo1',$titulo1);
   $this->Smarty->assign('Titulo2',$titulo2);
   $this->Smarty->assign('jugadores',$jugadores);
@@ -16,7 +17,8 @@ class jugadorView
   //$this->Smarty->debugging = true;
   $this->Smarty->display('templates/homeAdmin.tpl');
   }
-  function mostrarc($titulo1,$titulo2,$jugadores,$equipos){
+  function mostrarc($TITULO,$titulo1,$titulo2,$jugadores,$equipos){
+    $this->Smarty->assign('Titulo',$TITULO);
   $this->Smarty->assign('Titulo1',$titulo1);
   $this->Smarty->assign('Titulo2',$titulo2);
   $this->Smarty->assign('jugadores',$jugadores);

@@ -16,31 +16,26 @@
             <input type="text" class="form-control" id="nombre_equipo" name="nombre_equipo"
              placeholder="Nombre de Equipo" value="{$equipo['nombre_equipo']}" required>
             <div class="valid-tooltip">
-              Looks good!
+
             </div>
           </div>
           <div class="col-11">
             <label class="titulo"for="validationTooltip02">Posicion</label>
             <input type="text" class="form-control" id="pos_tabla" name="pos_tabla"placeholder="Posicion" value="{$equipo['pos_tabla']}" required>
             <div class="valid-tooltip">
-              Looks good!
+
             </div>
           </div>
           <div class="col-11">
             <label class="titulo"for="validationTooltip02">clasificacion copa</label>
             <input type="text" class="form-control" id="clasificacion_copa" name="clasificacion_copa"placeholder="clasificacion copa" value="{$equipo['clasificacion_copa']}" required>
             <div class="valid-tooltip">
-              Looks good!
+
             </div>
           </div>
 
         </div>
-        <button class="btn btn-primary" type="submit">Cargar</button>
+        <button class="btn btn-success" type="submit">Cargar</button>
       </form>
     </div>
-
-
-
-
-
 {include file="footer.tpl"}

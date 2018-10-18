@@ -16,7 +16,7 @@
       <div class="titulo">
         {$message}
       </div>
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-success">Login</button>
     </form>
 
   </div>

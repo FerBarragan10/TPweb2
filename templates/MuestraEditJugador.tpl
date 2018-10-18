@@ -1,11 +1,6 @@
 {include file="header.tpl"}
-
-    <h1>{$Titulo}</h1>
-
-
-    <div class="container col-8">
-      <h2>Formulario</h2>
-      <form method="POST" action="{$home}/guardarEditar">
+<h3 class="titulo">FORMULARIO JUGADOR</h3>
+<form method="POST" action="{$home}/guardarEditar">
         <input type="hidden" class="form-control" id="id_jugador" name="idjugador" value="{$jugador['id_jugador']}">
         <div class="form-group">
           <label for="nombre_jugador">nombre_jugador</label>
@@ -19,7 +14,12 @@
           <label for="dorsal">dorsal</label>
           <input type="text" class="form-control" id="dorsal" name="dorsal" value="{$jugador['dorsal']}">
         </div>
-        <button type="submit" class="btn btn-primary">Editar Jugador</button>
-      </form>
-    </div>
+        <div class="form-group">
+          <label class="titulo" for="altura">altura</label>
+          <input type="text" class="form-control" id="exampleInputPassword1"name="altura" value="{$jugador['altura']}">
+        </div>
+        <button type="submit" class="btn btn-warning">editar jugador</button>
+  </form>
+
+
 {include file="footer.tpl"}

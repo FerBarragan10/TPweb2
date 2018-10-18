@@ -24,10 +24,14 @@ class jugadorModel{
     $sentencia = $this->db->prepare("delete from jugadores where id_jugador=?");
     $sentencia->execute(array($id_jugador));
   }
-  function GuardarEditarJugador($nombre_jugador,$fecha_nac,$dorsal,$id_jugador){
-   $sentencia = $this->db->prepare( "update jugadores set nombre_jugador= ?, fecha_nac = ?, dorsal = ? where id_jugador=?");
-   $sentencia->execute(array($nombre_jugador,$fecha_nac,$dorsal,$id_jugador));
- }
+ function GuardarEditarJugador($nombre_jugador,$fecha_nac,$dorsal,$altura,$id_jugador){
+    $sentencia = $this->db->prepare( "update jugadores set nombre_jugador= ?, fecha_nac = ?, dorsal = ?, altura = ? where id_jugador=?");
+    $sentencia->execute(array($nombre_jugador,$fecha_nac,$dorsal,$altura,$id_jugador));
+
+
+}
+
+
  function getEquipos(){
      $sentencia = $this->db->prepare( "select * from equipo order by pos_tabla");
      $sentencia->execute();
@@ -70,6 +74,6 @@ class jugadorModel{
       //mysql_close($db);
       return $sentencia->fetch(PDO::FETCH_ASSOC);
     }
-  
+
 }
  ?>

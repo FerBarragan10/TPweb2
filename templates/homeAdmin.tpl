@@ -19,9 +19,10 @@
               <td>{$equipo['pos_tabla']}</td>
               <td>{$equipo['clasificacion_copa']}</td>
               <td >
-                <a href="borrarEquipo/{$equipo['id_equipo']}">BORRAR</a>
-                <a href="editarEquipo/{$equipo['id_equipo']}">EDITAR</a>
-                <a href="addEquipo">NUEVO</a>
+                <a class="btn btn-danger btn-block" href="borrarEquipo/{$equipo['id_equipo']}" role="button">BORRAR</a>
+
+
+                <a class="btn btn-warning btn-block" href="editarEquipo/{$equipo['id_equipo']}" role="button">EDITAR</a>
               </td>
             </tr>
            {/foreach}
@@ -29,6 +30,7 @@
 
       </tbody>
     </table>
+      <a  href="addEquipo" class="btn btn-success btn-lg active " role="button" aria-pressed="true">agregar equipo</a>
     </div>
 
 
@@ -59,8 +61,8 @@
           <td>{$jugador['fecha_nac']}</td>
           <td>{$jugador['altura']}</td>
           <td >
-            <a href="borrar/{$jugador['id_jugador']}">BORRAR</a>||
-            <a href="editar/{$jugador['id_jugador']}">EDITAR</a>
+            <a class="btn btn-danger btn-block" href="borrar/{$jugador['id_jugador']}" role="button">BORRAR</a>
+            <a class="btn btn-warning btn-block" href="editar/{$jugador['id_jugador']}" role="button">EDITAR</a>
           </td>
       </tr>
       {/foreach}
@@ -68,7 +70,7 @@
       </tr>
     </tbody>
     </table>
-    <a  href="addJugador" class="btn btn-primary btn-lg active " role="button" aria-pressed="true">agregar jugador</a>
+    <a  href="addJugador" class="btn btn-success btn-lg active " role="button" aria-pressed="true">agregar jugador</a>
 
     </div>
 

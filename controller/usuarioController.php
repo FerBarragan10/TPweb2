@@ -10,6 +10,7 @@ class usuarioController extends securedController
 
   function __construct()
   {
+    
     $this->view = new usuarioView();
     $this->model = new usuarioModel();
     $this->Titulo = "nuevo Usuario";
